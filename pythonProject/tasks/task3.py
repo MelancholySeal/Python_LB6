@@ -1,20 +1,13 @@
-import re
-word = input("Введите слово")
-k = int(input('Введите номер буквы'))
-data = []
-data2 = []
-if len(word) < 3:
-    print('Слово слишком маленькое')
-else:
-    for i in range(len(word)):data.append(word[i])
-    if k == 0:
-        data[1] = '§'
-    else:
-        data[k-1] = '§'
-        data[1] = '§'
-    for i in range(len(data)):
-        if data[i] != '§':
-            data2.append(data[i])
-data = ''.join(data2)
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-print(data)
+if __name__ == '__main__':
+    word = input("Введите слово: ")
+    k = int(input("Введите номер буквы для удаления: "))
+    if k <= 0 or k > len(word):
+        print("Некорректный номер буквы для удаления.")
+    else:
+        new_word = word[:2] + word[3:]
+        new_word = new_word[:k - 1] + new_word[k:]
+        print("Исходное слово:", word)
+        print("Измененное слово:", new_word)
