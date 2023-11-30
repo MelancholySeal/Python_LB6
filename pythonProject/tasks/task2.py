@@ -6,11 +6,12 @@ import sys
 if __name__ == '__main__':
     text = input("Введите предложение: ")
 
-    for i in range(len(text)):
-        if text[i] == "а":
-            print(i)
+    for i in enumerate(text):
+        char = i[0]
+        if text[char] == "а":
+            print(char)
             break
-        elif i == len(text)-1:
+        elif char == len(text)-1:
             print(
                 'Буква "а" не найдена',
                 file=sys.stderr
