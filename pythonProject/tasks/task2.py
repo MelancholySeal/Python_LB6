@@ -6,7 +6,7 @@ import sys
 if __name__ == '__main__':
     text = input("Введите предложение: ")
 
-    for i in range(len(text)):
+    for i, char in enumerate(text):
         if text[i] == "а":
             print(i)
             break
